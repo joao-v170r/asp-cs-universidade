@@ -1,0 +1,176 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PrincipalMaster.master.cs" Inherits="app_escolar.PrincipalMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link href="Content/bootadmin.css" rel="stylesheet" />
+
+    <title>Exemplo Sistema Escolar</title>
+    <style>
+        .efeito_Panel {
+            /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+            box-shadow: 0 10px 12px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
+            margin-right: 10px;
+        }
+
+        .efeito_Panel_2 {
+            /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+            box-shadow: 0 10px 10px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
+            margin-right: 2px;
+            margin-bottom: 2px;
+            font-weight: bold;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+        }
+
+        .fa {
+            margin: 10px;
+        }
+
+       .botoes{
+           margin:10px;
+       }
+    </style>
+</head>
+<body class="bg-dark">
+    <form runat="server">
+        <asp:ScriptManager runat="server" EnablePartialRendering="true">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+
+            </Scripts>
+        </asp:ScriptManager>
+        <nav class="navbar navbar-expand navbar-dark bg-danger">
+            <a class="sidebar-toggle mr-3" href="#"><i class="fa fa-bars"></i></a>
+            <a class="navbar-brand" href="#">UniJoaoAguiar</a>
+
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-envelope"></i>5</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-bell"></i>3</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="d-flex">
+            <div class="sidebar sidebar-dark bg-dark efeito_Panel">
+                <ul class="list-unstyled text-white">
+                    <li>
+
+                        <a href="#sm_expand_1" data-toggle="collapse">
+                            <i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>&nbsp; Cadastro
+                        </a>
+                        <ul id="sm_expand_1" class="list-unstyled collapse">
+                            <li><a href="CAluno.aspx">Aluno</a></li>
+                            <li><a href="#">Instrutor</a></li>
+                            <li><a href="#">Curso</a></li>
+                            <li><a href="#">Turma</a></li>
+
+                        </ul>
+
+                    </li>
+                    <li>
+
+                        <a href="#sm_expand_2" data-toggle="collapse">
+                            <i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>&nbsp; Movimentação
+                        </a>
+                        <ul id="sm_expand_2" class="list-unstyled collapse">
+                            <li><a href="#">Matrícula</a></li>
+
+                        </ul>
+
+                    </li>
+                    <li>
+
+                        <a href="#sm_expand_3" data-toggle="collapse">
+                            <i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>&nbsp; Herança
+                        </a>
+                        <ul id="sm_expand_3" class="list-unstyled collapse">
+                             <li><a href="pExHerancaEmpregado.aspx">Exemplo Herança Empregado/Gerente</a></li>
+                            <li><a href="pExHerancaPessoa.aspx">Exemplo Herança Pessoa Física</a></li>
+                            <li><a href="pExHerancaPessoa.aspx">Exemplo Herança Pessoa Jurídica</a></li>
+
+                        </ul>
+
+                    </li>
+                   
+                    <li>
+                        <a href="#sm_expand_4" data-toggle="collapse">
+                            <i class="fa fa-address-card fa-fw"></i>&nbsp; Polimorfismo
+                        </a>
+                        <ul id="sm_expand_4" class="list-unstyled collapse">
+                            <li><a href="CMatricula.aspx">Matrículas</a></li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <li>
+                        <a href="#sm_expand_5" data-toggle="collapse">
+                            <i class="fa fa-fw fa-link"></i>Classes Abstratas
+
+                        </a>
+                        <ul id="sm_expand_5" class="list-unstyled collapse">
+                            <li><a href="#">Relatório de Alunos</a></li>
+                            <li><a href="#">Relatório de Turmas</a></li>
+                            <li><a href="#">Relatório de Instrutores</a></li>
+                            <li><a href="#">Relatório de Matrículas</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sm_expand_6" data-toggle="collapse">
+                            <i class="fa fa-fw fa-link"></i>Interfaces
+
+                        </a>
+                        <ul id="sm_expand_6" class="list-unstyled collapse">
+                            <li><a href="#">Relatório de Alunos</a></li>
+                            <li><a href="#">Relatório de Turmas</a></li>
+                            <li><a href="#">Relatório de Instrutores</a></li>
+                            <li><a href="#">Relatório de Matrículas</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sm_expand_7" data-toggle="collapse">
+                            <i class="fa fa-fw fa-link"></i>Persistência de Dados com ADO.NET
+
+                        </a>
+                        <ul id="sm_expand_7" class="list-unstyled collapse">
+                            <li><a href="#">Relatório de Alunos</a></li>
+                            <li><a href="#">Relatório de Turmas</a></li>
+                            <li><a href="#">Relatório de Instrutores</a></li>
+                            <li><a href="#">Relatório de Matrículas</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-fw fa-link"></i>Ajuda</a></li>
+                </ul>
+            </div>
+
+            <div class="content p-4">
+
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+            </div>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script src="Scripts/bootadmin.min.js"></script>
+    </form>
+</body>
+</html>
+
